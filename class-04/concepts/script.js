@@ -46,5 +46,6 @@ console.log(attendance > 85 || marks > 40);
 // Type comparison
 console.log(typeof 10);
 console.log(typeof "10");
+console.log("--------------------");
 console.log(10 == "10");
 console.log(10 === "10");
