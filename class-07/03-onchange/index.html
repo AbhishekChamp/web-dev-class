@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Onchange Example</title>
+    </head>
+
+    <body>
+        <select onchange="showCourse(this.value)">
+            <option value="">Select Course</option>
+            <option value="Math is an awesome subject">Math</option>
+            <option value="Science">Science</option>
+        </select>
+
+        <p id="output"></p>
+
+        <script>
+            function showCourse(course) {
+                document.getElementById("output").innerHTML =
+                    "You selected: " + course;
+            }
+        </script>
+    </body>
+</html>

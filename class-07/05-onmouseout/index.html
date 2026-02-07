@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Onmouseout Example</title>
+    </head>
+
+    <body>
+        <h1 onmouseover="makeRed(this)" onmouseout="makeBlack(this)">
+            Move mouse over and out
+        </h1>
+
+        <script>
+            function makeRed(el) {
+                el.style.color = "red";
+            }
+
+            function makeBlack(el) {
+                el.style.color = "black";
+            }
+        </script>
+    </body>
+</html>
