@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Result Page</title>
+    </head>
+    <body>
+        <h1>Submitted Details</h1>
+        <div id="output"></div>
+        <a href="index.html">Back to Form</a>
+        <script>
+            const data = JSON.parse(window.name);
+            const output = document.getElementById("output");
+            output.innerHTML = `
+            <p><strong>Name:</strong>${data.name}</p>
+            <p><strong>Email:</strong>${data.email}</p>
+            <p><strong>Age:</strong>${data.age}</p>
+            <p><strong>Gender:</strong>${data.gender}</p>
+            <p><strong>Skills:</strong>${data.skills.join(", ")}</p>
+            <p><strong>Country:</strong>${data.country}</p>
+            <p><strong>About:</strong>${data.about}</p>
+            <p><strong>Date of birth:</strong>${data.dob}</p>
+            `;
+        </script>
+    </body>
+</html>
