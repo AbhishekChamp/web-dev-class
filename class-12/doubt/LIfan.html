@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+<title>JavaScript example</title>
+
+<style>
+table, td {border: 1px solid black;
+           border-collapse: collapse;
+		   background-color: #D6EEEE;
+		   text-align:center;
+		   margin-left:auto;
+		   margin-right:auto; 
+		  }
+		   
+body     {background-image:url(Hat.svg);}
+
+h1, p    {text-align:center; color:red;}
+</style>
+
+
+</head>
+
+<body>
+
+<table>
+<tr>
+<td>
+<h1>Choose your Cupcake</h1>
+<h2>Choose the flavour of Cupcake<br>and enter the number you'd like to bake.</h2>
+<p><b>The cupcakes can only be made in batches of 6,12, 18 or 24.</b></p>
+
+<table> 
+<tr>
+<td style="border:hidden;"><img src="WireFrame.png" id="Cupcake"  alt="Cupcakes"></td>
+
+</tr>
+</table>
+
+<p><b>Choose the cupcake to display above</b></p>
+
+<p>
+<button type="button"  onClick="ShowVanilla()">Vanilla</button>
+<button type="button" onClick="ShowChocolate()">Chocolate</button>
+<button type="button" onClick="ShowOrange()">Orange</button>
+<table style="border:hidden;"> 
+<tr>
+<td style="width:700px; text-align:center;"><h2>How many cakes would you like to bake?<br>6, 12, 18 or 24<br>
+<input style="font-size:30px; text-align:center" id="NumCakes" value="" size= "2"></h2>
+<button onclick="check()">Submit Number of Cupcakes</button>
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+<br>
+
+<table>
+<tr style=" font-size:24px;"><td colspan="3" style="width:240px;"><b>Ingredients</b></td><td><b>Method</b></td></tr>
+<tr><td>Softened Butter</td> <td style="width:40px;"> <p id="Butter"> </p> </td> <td>gms</td>
+<td rowspan="5" valign="top">
+STEP 1<br>Heat oven to 180C/160C fan/gas 4 and fill the cupcake tray with cases.<br>
+STEP 2<br>Beat the softened butter and the caster sugar together<br>until pale and fluffy then whisk in the eggs, one at a time.<br>
+STEP 3<br>Add the flavour extract, the self-raising flour and a pinch of salt, whisk<br>until just combined then spoon the mixture into the cupcake cases.<br>
+STEP 4<br>Bake for 15 mins until golden brown.
+</td>
+</tr>
+
+<tr><td>Caster Sugar       </td> <td> <p id="Sugar">   </p> </td>  <td>gms   </td></tr>
+<tr><td>Self raising flour </td> <td> <p id="Flour">   </p> </td>  <td>gms   </td></tr>
+<tr><td>Eggs               </td> <td> <p id="Eggs">    </p> </td>  <td>large </td></tr>
+<tr><td>Flavour Extract    </td> <td> <p id="Extract"> </p> </td>  <td>tsp   </td></tr>
+</table>
+<script
+    src="Cupcake.js">
+</script>
+</body>
+</html>

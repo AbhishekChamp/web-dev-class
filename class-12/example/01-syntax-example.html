@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Javascript Syntax Example</title>
+    </head>
+    <body>
+        <h1>JavaScript Statements Demo</h1>
+        <button onclick="runExample()">Run Example</button>
+        <p id="output"></p>
+        <script>
+            function runExample() {
+                let number1 = 10;
+                let number2 = 5;
+                let name = "Nethra";
+
+                // Arithmetic Operator
+                let sum = number1 + number2;
+
+                // String Operator
+                let message = "Hello " + name;
+
+                // Comparison Operator
+                let isGreater = number1 > number2;
+
+                // Logical Operator
+                let result = number1 > 5 && number2 < 10;
+
+                // Conditional (Ternary) Operator
+                let status = sum > 10 ? "Big Number" : "Small Number";
+
+                // Expression
+                let expressionResult = number1 * 2 + number2;
+
+                // Display everything in DOM
+                document.getElementById("output").innerHTML = `
+                    ${message} <br>
+                    Sum: ${sum} <br>
+                    Is number1 greater than number2? ${isGreater} <br>
+                    Logical result: ${result} <br>
+                    Status: ${status} <br>
+                    Expression result: ${expressionResult}
+                `;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>JavaScript Functions Example</title>
+    </head>
+    <body>
+        <h2>JavaScript Functions Demo</h2>
+        <!-- Event based function -->
+        <button onclick="greetUser()">Click Me</button>
+        <p id="output"></p>
+        <script>
+            // Self-Invoked function (run automatically)
+            (function () {
+                console.log("Self-Invoked Function");
+            })();
+
+            // Function Executed When Event Occurs
+            function greetUser() {
+                document.getElementById("output").textContent = "Hello World";
+                calculateMarks();
+            }
+
+            // Function invoked from code
+            function calculateMarks() {
+                let marks = 95;
+                let result = checkPassFail(marks);
+                document.getElementById("output").innerHTML +=
+                    "<br>Marks: " + marks + "<br>Status: " + result;
+            }
+
+            function checkPassFail(score) {
+                if (score >= 40) {
+                    return "Pass";
+                } else {
+                    return "Fail";
+                }
+            }
+        </script>
+    </body>
+</html>

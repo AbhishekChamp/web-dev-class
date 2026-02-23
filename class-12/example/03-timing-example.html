@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>JavaScript Timing Events</title>
+    </head>
+    <body>
+        <h2>JavaScript Timing Events Demo</h2>
+
+        <button onclick="startTimeout()">Start setTimeout</button>
+        <button onclick="startInterval()">Start setInterval</button>
+        <button onclick="stopInterval()">Stop Interval</button>
+
+        <p id="output"></p>
+
+        <script>
+            let intervalId;
+
+            // SetTimeout Example
+            function startTimeout() {
+                document.getElementById("output").innerHTML =
+                    "Wait for 3 seconds...";
+
+                setTimeout(function () {
+                    document.getElementById("output").innerHTML +=
+                        "<br>Time's up!";
+                }, 3000);
+            }
+
+            // SetInterval Example
+            function startInterval() {
+                let count = 0;
+                intervalId = setInterval(function () {
+                    count++;
+                    document.getElementById("output").innerHTML =
+                        "Counter: " + count;
+                }, 1000);
+            }
+
+            // Stop setInterval
+            function stopInterval() {
+                clearInterval(intervalId);
+                document.getElementById("output").innerHTML +=
+                    "<br>Interval stopped";
+            }
+        </script>
+    </body>
+</html>
