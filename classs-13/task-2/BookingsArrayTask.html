@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tawara Fruit Market Booking Form</title>
+<style>
+h1,h2,h3,p { font-family: sans-serif; text-align:center;}
+h3 {font-size: 12pt; text-align:left;}
+table { border: 0px solid black;
+border-collapse: separate;
+margin-left:auto; margin-right:auto;}
+.table-cell {width: 150px; height: 30px;text-align: left;}
+body { background-color: #abc8a4;}
+</style>
+</head>
+<body>
+
+<div style="text-align:center">
+   <h1>Tawara UK<br>(Trial) Fruit Market site booking form <br><br></h1>
+   <h2>Please complete all the information daily</h2>
+   <h2>Bookings for (Select day)</h2>
+   <select name="day" id="day">
+    <option value="Monday">Monday      </option>
+    <option value="Tuesday">Tuesday    </option>
+    <option value="Wednesday">Wednesday</option>
+    <option value="Thursday">Thursday  </option>
+<option value="Friday">Friday      </option>
+  </select>
+<br><br><br>
+<Table width=80%>
+<tr>
+<td style="width:20%;"></td>
+<td><!-- The names of the variable for the array are shown here -->
+    <div style="text-align:right">
+    <label for="Gname">Given name:</label>
+    <input type="text" id="Gname" required>
+    <br>
+<label for="Fname">Family name:</label>
+<input type="text" id="Fname" required>
+<br>
+    <label for="Cname">Company:</label>
+<input type="text" id="Cname">
+</td>
+<td style="width:42%;"></td>
+</tr>
+<br><br>
+</table>
+<table>
+<tr>
+<td style="width:35%;"></td>
+<td>
+    <button onclick="addData()">Add to Bookings</button>
+    <button onclick="displayArray()">Display Bookings</button>
+    <br><br>
+</td>
+<td style="width:35%"></td>
+</tr>
+</div>
+</table>
+<table>
+
+<tr><td></td>
+    <td><div style="text-align:left"><h3 id="output"></h3></div></td>
+<td></td>
+</tr>
+</table>
+    <script>
+// An empty array named BookingData is intialised to store the data.
+let BookingData = [];
+
+//Part a - Complete the addData() function to collect the data input and add the data to the array.
+//Part b - Add a check to make sure both name fields are filled - add an alert if not.
+//Part c - Add code to clear the input fields after the data is added to the Bookings array.
+//Part d - Add code to insert the text 'Private' for the company field if it is left blank.
+
+        function addData() {
+            let Gname = document.getElementById("Gname").value;
+            let Fname = document.getElementById("Fname").value;
+            let Cname = document.getElementById("Cname").value;
+            let day = document.getElementById("day").value;
+
+            if (Gname === "" || Fname === "") {
+                alert("Both Given name and Family name must be present")
+                return;
+            }
+
+            if (Cname === "") {
+                Cname = "Private";
+            }
+
+            BookingData.push({Fname, Gname, Cname, day});
+            document.getElementById("Gname").value = "";
+            document.getElementById("Fname").value = "";
+            document.getElementById("Cname").value = "";
+}
+
+
+
+
+// This function will display the data in the Bookings array
+//DO NOT alter this code
+        function displayArray() {
+            const Records = document.getElementById('output');
+            Records.innerHTML = '';
+
+            if (BookingData.length === 0) {
+                Records.innerHTML = '<p>No data to display.</p>';
+            } else {
+                let Display = '<table border="0">';
+            Display += '<tr><th>Given name</th><th>Family name</th><th>Company</th><th>Day</th></tr>';
+            for (let i = 0; i < BookingData.length; i++) {
+                const { Fname, Gname, Cname, day } = BookingData[i];
+                Display += `<tr><h3><td class="table-cell">${Gname}</td><td class="table-cell">${Fname}</td><td class="table-cell">${Cname}</td><td class="table-cell">${day}</td></h3></tr>`;
+            }
+
+            Display += '</table>';
+            Records.innerHTML = Display;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Item Counter</title>
+    </head>
+
+    <body style="color: red" ;>
+        <h1 style="font-style: italic; text-align: center">
+            Tawara Infromation Solutions (UK) (Trail) Item counter
+        </h1>
+        <p style="text-align: center">Please click for each item inspected</p>
+
+        <button onclick="addItem()">Inspection Complete</button>
+
+        <p style="text-align: center" id="displayText"></p>
+
+        <script>
+            // var count = 0;
+            // function addItem() {
+            //     count++;
+            //     document.getElementById("displayText").innerHTML =
+            //         count + " Items Inspected";
+            // }
+            var count = 0;
+            function addItem() {
+                count++;
+                if (count === 1) {
+                    document.getElementById("displayText").innerHTML =
+                        count + " Item Inspected";
+                } else {
+                    document.getElementById("displayText").innerHTML =
+                        count + " Items Inspected";
+                }
+            }
+        </script>
+    </body>
+</html>

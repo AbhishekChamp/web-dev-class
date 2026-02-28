@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Image Manipulation Demo</title>
+    </head>
+    <body>
+        <h2>Image Manipulation Demo</h2>
+        <img src="./image/bulb_on.jpeg" alt="Bulb on" id="bulb" width="200" />
+        <br />
+        <br />
+        <button onclick="hideImage()">Hide</button>
+        <button onclick="showImage()">Show</button>
+        <button onclick="toggleImage()">Toggle</button>
+        <button onclick="styleImage()">Style</button>
+        <script>
+            function hideImage() {
+                document.getElementById("bulb").style.display = "none";
+            }
+            function showImage() {
+                document.getElementById("bulb").style.display = "block";
+            }
+            function toggleImage() {
+                let image = document.getElementById("bulb");
+                if (image.src.includes("bulb_off")) {
+                    image.src = "./image/bulb_on.jpeg";
+                } else {
+                    image.src = "./image/bulb_off.jpg";
+                }
+            }
+            function styleImage() {
+                let img = document.getElementById("bulb");
+                img.style.border = "4px solid red";
+                img.style.borderRadius = "20px";
+            }
+        </script>
+    </body>
+</html>
